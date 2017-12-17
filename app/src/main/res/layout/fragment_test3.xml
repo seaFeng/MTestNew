@@ -1,0 +1,22 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.dahai.mtest.test.Test3Fragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <com.dahai.mtest.view.ScrollerView1
+        android:id="@+id/test3_test"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#a38">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:background="#fff"
+            android:gravity="center"
+            android:text="11111111111"/>
+
+    </com.dahai.mtest.view.ScrollerView1>
+</FrameLayout>

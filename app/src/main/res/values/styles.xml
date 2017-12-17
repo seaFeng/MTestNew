@@ -1,0 +1,53 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <!--<item name="colorPrimaryDark">@color/white</item>-->
+        <item name="colorAccent">@color/colorAccent</item>
+        <!--返回键样式-->
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+        <!--<item name="android:windowTranslucentStatus">true</item>-->
+
+    </style>
+
+    <dimen name="topMargin">0dp</dimen>
+
+    <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@color/white</item>
+    </style>
+
+    <style name="Main2Theme" parent="AppTheme">
+        <!--<item name="colorPrimaryDark">@android:color/holo_red_dark</item>-->
+        <!--<item name="android:statusBarColor">@android:color/holo_blue_bright</item>-->
+
+    </style>
+
+    <style name="FragmentActivityTheme" parent="AppTheme">
+
+    </style>
+
+    <style name="CustomDialogTheme" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item><!--边框-->
+        <item name="android:windowIsFloating">true</item><!--是否浮现在activity上-->
+        <item name="android:windowIsTranslucent">false</item><!--半透明-->
+        <item name="android:windowNoTitle">true</item><!--无标题-->
+        <item name="android:windowBackground">@android:color/transparent</item><!--设置背景颜色：透明-->
+        <item name="android:backgroundDimAmount">0</item><!--灰度-->
+
+        <item name="android:windowContentOverlay">@null</item><!-- 对话框是否有遮盖 -->
+        <item name="android:windowAnimationStyle">@style/dialog_animation</item><!-- 弹出或者进入时的动画效果 -->
+        <item name="android:colorBackgroundCacheHint">@null</item><!-- 背景缓存颜色 -->
+
+    </style>
+
+    <style name="dialog_animation">
+        <item name="android:windowEnterAnimation">@anim/fading_in</item>
+        <item name="android:windowExitAnimation">@anim/fading_out</item>
+    </style>
+
+
+
+</resources>

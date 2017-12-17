@@ -1,0 +1,35 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@android:color/holo_red_light</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!--透明状态栏
+        <item name="android:windowTranslucentStatus">false</item>
+        &lt;!&ndash;<item name="android:fitsSystemWindows">true</item>&ndash;&gt;
+
+        &lt;!&ndash;透明虚拟键&ndash;&gt;
+        <item name="android:windowTranslucentNavigation">false</item>-->
+    </style>
+
+    <dimen name="topMargin">0dp</dimen>
+
+    <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@color/white</item>
+    </style>
+
+    <style name="Main2Theme" parent="AppTheme">
+        <!--该方法只有在没有透明状态栏的情况下才有用-->
+        <!--<item name="colorPrimaryDark">@android:color/transparent</item>-->
+        <!--<item name="android:statusBarColor">@android:color/transparent</item>-->
+
+    </style>
+
+    <style name="FragmentActivityTheme" parent="AppTheme">
+
+    </style>
+
+</resources>

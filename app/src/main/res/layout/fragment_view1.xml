@@ -1,0 +1,34 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context="com.dahai.mtest.fragment.View1Fragment">
+
+    <com.dahai.mtest.view.lib.WheelView
+        android:id="@+id/wheelView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="#eee">
+
+    </com.dahai.mtest.view.lib.WheelView>
+
+    <com.dahai.mtest.view.testView1.PaintTextTestView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:paintText="海哥Javap牛鼻"
+        android:background="#f00"/>
+
+    <com.dahai.mtest.view.event.OutGroupView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#eee">
+        <com.dahai.mtest.view.event.InnerView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="#0f0"/>
+
+    </com.dahai.mtest.view.event.OutGroupView>
+
+</LinearLayout>

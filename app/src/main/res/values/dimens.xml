@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--选中文字大小-->
+    <dimen name="pickerview_textsize">20sp</dimen>
+
+</resources>

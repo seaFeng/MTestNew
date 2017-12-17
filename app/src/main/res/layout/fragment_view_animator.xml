@@ -1,0 +1,59 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.dahai.mtest.fragment.ViewAnimatorFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btn_animator1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="动画1"/>
+
+        <Button
+            android:id="@+id/btn_drawableAnim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="帧动画"/>
+        <Button
+            android:id="@+id/btn_alphaAnim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="viewAlpha"/>
+
+        <Button
+            android:id="@+id/btn_translateAnim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="view平移"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btn_viewScale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View缩放"/>
+        <Button
+            android:id="@+id/btn_viewRotate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="view旋转"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_anim"
+        android:layout_width="300px"
+        android:layout_height="300px"
+        android:scaleType="fitStart"
+        android:src="@mipmap/ic_launcher"/>
+
+</LinearLayout>
