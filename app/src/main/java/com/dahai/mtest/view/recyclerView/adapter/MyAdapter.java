@@ -20,12 +20,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View itemView;
 
-        if (viewType == REFRESH_TYPE) {
+        /*if (viewType == REFRESH_TYPE) {
             itemView = inflater.inflate(R.layout.view_refresh, parent, false);
-            /*ViewGroup.LayoutParams layoutParams = itemView.getLayoutParams();
+            *//*ViewGroup.LayoutParams layoutParams = itemView.getLayoutParams();
             layoutParams.height = 0;
-            itemView.setLayoutParams(layoutParams);*/
-        } else 
+            itemView.setLayoutParams(layoutParams);*//*
+        } else*/
         itemView = inflater.inflate(R.layout.recycler_item, parent, false);
 
         return new MyViewHolder(itemView);
@@ -33,19 +33,19 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     @Override
     public void onBindViewHolder(MyAdapter.MyViewHolder holder, int position) {
-        if (position == 0) {
+        /*if (position == 0) {
 
-        } else
+        } else*/
         holder.tv_content.setText(String.valueOf(position));
     }
 
-    @Override
+    /*@Override
     public int getItemViewType(int position) {
         if (position == 0) {
             return REFRESH_TYPE;
         }
         return 0;
-    }
+    }*/
 
     @Override
     public int getItemCount() {

@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.dahai.mtest.R;
+import com.dahai.mtest.view.recyclerView.RecyclerViewLoad;
 import com.dahai.mtest.view.recyclerView.adapter.MyAdapter;
 
 import butterknife.BindView;
@@ -29,7 +30,7 @@ public class RecyclerViewFragment extends Fragment {
     private static final String TAG = "RecyclerViewFragment";
 
     @BindView(R.id.recyclerView)
-    RecyclerView recyclerView;
+    RecyclerViewLoad recyclerView;
     Unbinder unbinder;
 
     LinearLayoutManager layoutManager;
@@ -48,40 +49,6 @@ public class RecyclerViewFragment extends Fragment {
         layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(new MyAdapter());
-        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
-            @Override
-            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
-                super.onScrollStateChanged(recyclerView, newState);
-                switch (newState) {
-                    case SCROLL_STATE_IDLE:                 // 静止
-                        //Log.e(TAG,"第一个状态");
-                        break;
-                    case SCROLL_STATE_DRAGGING:             // 拖动
-                        //Log.e(TAG,"第二个状态");
-                        break;
-                    case SCROLL_STATE_SETTLING:             // 自滑动停止
-                        //Log.e(TAG,"第三个状态");
-                        break;
-                }
-            }
-
-            @Override
-            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-                super.onScrolled(recyclerView, dx, dy);
-                LinearLayoutManager layoutManager = (LinearLayoutManager) recyclerView.getLayoutManager();
-                RecyclerView.Adapter adapter = recyclerView.getAdapter();
-
-                int firstCompletelyVisibleItemPosition = layoutManager.findFirstCompletelyVisibleItemPosition();
-                //Log.e(TAG,"第一个完全可见item的位置 == " + firstCompletelyVisibleItemPosition);
-                if (firstCompletelyVisibleItemPosition == 1) {
-                    View refreshView = recyclerView.getChildAt(0);
-                    ViewGroup.LayoutParams layoutParams = refreshView.getLayoutParams();
-                    layoutParams.height = dx;
-                    refreshView.setLayoutParams(layoutParams);
-                }
-                //Log.e(TAG,"dx = " + dx + "     dy = " + dy);
-            }
-        });
     }
 
     @Override
