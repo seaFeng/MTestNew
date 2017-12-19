@@ -86,6 +86,7 @@ public class RecyclerViewLoad extends FrameLayout {
             }
 
 
+
             @Override
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
@@ -95,20 +96,9 @@ public class RecyclerViewLoad extends FrameLayout {
                 int firstCompletelyVisibleItemPosition = layoutManager.findFirstCompletelyVisibleItemPosition();
                 //Log.e(TAG,"第一个完全可见item的位置 == " + firstCompletelyVisibleItemPosition);
                 if (firstCompletelyVisibleItemPosition == 0) {
+                    outScroll = true;
 
-                    ViewGroup.MarginLayoutParams layoutParams = (MarginLayoutParams) view_refresh.getLayoutParams();
-                    Log.e("scroll","dx = " + dx + "     dy = " + dy);
 
-                    if (dx > 0) {       // 向上平移
-                        outScroll = true;
-                        refreshViewMarginTop += dx;
-                    } else {            // 向下位移
-                        refreshViewMarginTop += dx;
-                    }
-
-                    Log.e("scroll","滑动的高度 == " + layoutParams.height);
-                    layoutParams.topMargin = refreshViewMarginTop;
-                    view_refresh.setLayoutParams(layoutParams);
                 } else {
                     outScroll = false;
                 }
@@ -124,36 +114,44 @@ public class RecyclerViewLoad extends FrameLayout {
 
     int value;
 
+    float startY = 0 ;// 内部定义开始位置的坐标
+
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         // TODO 设置滑动事件
-        float startX = 0 ;// 内部定义开始位置的坐标
+
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                if (startX == 0) {
-                    startX = event.getRawX();
-                    System.out.println("按下了。。。。" + startX);
-                }
-
+                startY = event.getRawY();
+                System.out.println("按下了。。。。" + startY);
                 break;
             case MotionEvent.ACTION_MOVE:
-                float endX = event.getRawX();
-                float diff = endX - startX;
-                System.out.println("----> endX" + endX);
-                // System.out.println( " ----->"+ diff );
+                float endY = event.getRawY();
+                float diff = endY - startY;
+
                 if (diff > 0) {
-                    refreshViewMarginTop += diff;
                     ViewGroup.MarginLayoutParams layoutParams = (MarginLayoutParams) view_refresh.getLayoutParams();
-                    layoutParams.topMargin = refreshViewMarginTop;
+                    Log.e("scroll","diff = " + diff);
+
+                    if (diff > 0) {       // 向上平移
+                        refreshViewMarginTop += diff;
+                    } else {            // 向下位移
+                        refreshViewMarginTop += diff;
+                    }
+
+                    Log.e("scroll","滑动的高度 == " + layoutParams.height);
+                    layoutParams.topMargin = refreshViewMarginTop/2;
                     view_refresh.setLayoutParams(layoutParams);
                 }
 
-                invalidate();
-                startX = event.getRawX();
-                System.out.println("新获取到的值" + startX);
+                startY = endY;
+                System.out.println("新获取到的值" + startY);
                 break;
             case MotionEvent.ACTION_UP:
-                //startX = 0;
+                ViewGroup.MarginLayoutParams layoutParams = (MarginLayoutParams) view_refresh.getLayoutParams();
+                layoutParams.topMargin = 0;
+                view_refresh.setLayoutParams(layoutParams);
+                outScroll = false;
                 break;
 
         }
